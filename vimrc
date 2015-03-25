@@ -47,9 +47,9 @@
     vnoremap . :
     let mapleader = ","
     nnoremap ! :!
-    nnoremap <C-L> :nohl<CR><C-L>
-    nnoremap <c-l> :bn<cr>
-    nnoremap <c-h> :bN<cr>
+    nnoremap <c-l> :nohl<cr><c-l>
+    nnoremap <c-j> :bn<cr>
+    nnoremap <c-k> :bN<cr>
     nnoremap <leader>r .
     nnoremap <leader>bn :bn<cr>
     nnoremap <leader>bb :bN<cr>
@@ -217,4 +217,4 @@
 "    + and *                         System clipboard registers
 "    %                               Current buffer register
 "    #                               Previous buffer register
-"    :registers                      See register contens 
+"    :registers                      See register contents 
