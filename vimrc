@@ -97,6 +97,7 @@
 "    INFO
 "    Ctrl-g                          See file and position
 "    Ctrl-l                          Redraw (Remapped to turn off highlights)
+"    q:                              Command line window
 "   
 "    NAVIGATION
 "    Arrows,h,j,k,l                  Left, down, up, right
