@@ -18,7 +18,7 @@
         colorscheme solarized
         set guifont=Consolas:h10:cDEFAULT
         set lines=50 columns=120
-    elseif has ("gui_mac")
+    elseif has ("gui_macvim")
         "Mac macvim
         let g:solarized_termcolors=256
         set background=light
@@ -26,6 +26,8 @@
         colorscheme solarized
     else
         "Terminal session
+        "Use 'ron' for black background and 'default' for white
+        "colorscheme default
         colorscheme ron
     endif
 
