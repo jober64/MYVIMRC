@@ -1,18 +1,33 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                                          "
-"    .vimrc optimized for terminal sessions. Designed for  "
-"    standard vim installation. Cheat sheet with custom    "
-"    mappings in the end of the file.                      "
-"                                                          "
-"    * JB 2011-2015 *                                      "
-"                                                          "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                                             "
+"    Generic vimrc. Designed for GVim MacVim, Cygwin and      "
+"    vim in terminal sessions. No plug-ins required, but      "
+"    the Solarized color scheme must be installed in GUIs.    "
+"    Cheat sheet with custom mappings in the end of the file. "
+"                                                             "
+"    * JB 2011-2015 *                                         "
+"                                                             "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  
-" Color scheme
-    "colorscheme ron
-    let g:solarized_termcolors=256
-    set background=light
-    colorscheme solarized
+"   User interface
+    if has ("gui_win32")
+        "Windows gvim
+        let g:solarized_termcolors=256
+        set background=dark
+        let g:solarized_menu=0
+        colorscheme solarized
+        set guifont=Consolas:h10:cDEFAULT
+        set lines=50 columns=120
+    elseif has ("gui_mac")
+        "Mac macvim
+        let g:solarized_termcolors=256
+        set background=light
+        let g:solarized_menu=0
+        colorscheme solarized
+    else
+        "Terminal session
+        colorscheme ron
+    endif
 
 " General settings
     syntax on
