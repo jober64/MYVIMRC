@@ -1,11 +1,12 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                             "
-"    Generic vimrc. Designed for GVim MacVim, Cygwin and      "
-"    vim in terminal sessions. No plug-ins required, but      "
-"    the Solarized color scheme must be installed in GUIs.    "
-"    Cheat sheet with custom mappings in the end of the file. "
+"    Generic vimrc. Designed for GVim, MacVim and vim in      "
+"    Cygwin, Mac and Linux in terminal sessions. No plug-ins  "
+"    are required, but the Solarized color scheme must be     "
+"    installed in GUI GVim and MacVim sheet with customing    "
+"    imaooings in the end of the file.                        "
 "                                                             "
-"    * JB 2011-2015 *                                         "
+"    JB 2011-2015                                             "
 "                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  
@@ -24,6 +25,14 @@
         set background=light
         let g:solarized_menu=0
         colorscheme solarized
+        set guifont=Menlo\ Regular:h14
+    elseif has ("gui")
+        "Linux gvim
+        let g:solarized_termcolors=256
+        set background=light
+        let g:solarized_menu=0
+        colorscheme solarized
+        set guifont=Monospace\ 12
     else
         "Terminal session
         "Use 'ron' for black background and 'default' for white
@@ -34,8 +43,7 @@
 " General settings
     syntax on
     set nocompatible
-    "The backspace setting need to changed depending on
-    "which terminal you are using.
+    "The backspace setting depends on terminal settings
     set backspace=2
     set ignorecase
     set smartcase
@@ -56,7 +64,7 @@
     set softtabstop=4
     set expandtab
     set number
-    "set nowrap
+    set nowrap
  
 " Shortcuts
 " Optimized for Swedish keyboards
@@ -97,25 +105,13 @@
         autocmd BufWinEnter * call ResCur()
     augroup END
  
-" experimental
-"   set statusline=%m         " Modified
-"   set statusline+=%r        " Read only
-"   set statusline+=%F        " Path to the file
-"   set statusline+=%=        " Switch to the right side
-"   set statusline+=%l        " Current line
-"   set statusline+=/         " Separator
-"   set statusline+=%L        " Total lines
-"
-"   set noruler
-"   set statusline=%F[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
- 
 " Cheat sheet
 "
 "    START VIM
-"    vim <file1> <file2>               Open files in buffers, show first
-"    vim -o <file1> <file2>            In horisontal split
-"    vim -O <file1> <file2>            In vertical split
-"    vim -p <file1> <file2>            In tabs
+"    vim <file1> <file2>             Open files in buffers, show first
+"    vim -o <file1> <file2>          In horisontal split
+"    vim -O <file1> <file2>          In vertical split
+"    vim -p <file1> <file2>          In tabs
 "  
 "    INFO
 "    Ctrl-g                          See file and position
@@ -179,6 +175,7 @@
 "    a                               Insert after marker
 "    o                               Insert after line
 "    O                               Insert before line
+"    R                               Overwrite
 "    u                               Undo
 "    Ctrl-r                          Redo
 "    p                               Paste after marker
