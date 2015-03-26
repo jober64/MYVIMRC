@@ -75,7 +75,13 @@
     nnoremap <F5> :buffers<CR>:buffer<Space>
  
 " Open files from last session and remember last positions
-    set viminfo='10,\"100,:20,%,n~/.viminfo
+    if has ("gui_win32")
+        "Special path for gvim in Windows
+        set viminfo='10,\"100,:20,%,nC:/Program\ Files\ (x86)/Vim/_viminfo
+    else
+        "Standard
+        set viminfo='10,\"100,:20,%,n~/.viminfo
+    endif
  
     function! ResCur()
         if line("'\"") <= line("$")
