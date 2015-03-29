@@ -1,12 +1,12 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                             "
-"    Generic vimrc. Designed for GVim, MacVim and vim in      "
-"    Cygwin, Mac and Linux in terminal sessions. No plug-ins  "
-"    are required, but the Solarized color scheme must be     "
-"    installed in GUI GVim and MacVim. Cheat sheet with       "
-"    customing mappings in the end of the file.               "
+"    Generic vimrc, designed for GVim, MacVim and Vim. No     "
+"    plug-ins required, but the Solarized color scheme must   "
+"    be installed in Gvim and MacVim.                         "
 "                                                             "
-"    JB 2011-2015                                             "
+"    Cheat sheet with custom mappings in the end of the file. "
+"                                                             "
+"    * JB 2011-2015 *                                         "
 "                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  
@@ -26,24 +26,19 @@
         let g:solarized_menu=0
         colorscheme solarized
         set guifont=Menlo\ Regular:h14
-    elseif has ("gui")
-        "Linux gvim
-        let g:solarized_termcolors=256
-        set background=light
-        let g:solarized_menu=0
-        colorscheme solarized
-        set guifont=Monospace\ 12
     else
         "Terminal session
         "Use 'ron' for black background and 'default' for white
         "colorscheme default
-        colorscheme ron
+        colorscheme ron 
     endif
 
 " General settings
     syntax on
     set nocompatible
-    "The backspace setting depends on terminal settings
+    set title
+    "The backspace setting need to changed depending on
+    "which terminal you are using.
     set backspace=2
     set ignorecase
     set smartcase
@@ -65,24 +60,35 @@
     set expandtab
     set number
     set nowrap
- 
+    set wildmenu
+    set wildmode=full
+    set wildchar=<tab>
+    set wildcharm=<c-z>
+    "set undofile
+    "set undodir=~/.vim/undo//
+    set nobackup
+    "set backupdir=~/.vim/backup//
+    "set directory=~/.vim/swap//
+
 " Shortcuts
 " Optimized for Swedish keyboards
     nnoremap . :
     vnoremap . :
     let mapleader = ","
     nnoremap ! :!
+    inoremap jk <esc>
     nnoremap <c-l> :nohl<cr><c-l>
     nnoremap <c-j> :bn<cr>
     nnoremap <c-k> :bN<cr>
-    nnoremap <leader>r .
     nnoremap <leader>bn :bn<cr>
     nnoremap <leader>bb :bN<cr>
     nnoremap <leader>bd :bd<cr>
     nnoremap <leader>be :enew<cr>
-    nnoremap <F2> :set number! invpaste paste?<CR>
+    nnoremap <F2> :set number! paste! paste?<CR>
     nnoremap <F3> :%s/foo/bar/gc
-    nnoremap <F5> :buffers<CR>:buffer<Space>
+    nnoremap <F4> :Explore<cr>
+    nnoremap <F10> .
+    nnoremap <tab> :buffers<CR>:buffer<Space>
  
 " Open files from last session and remember last positions
     if has ("gui_win32")
@@ -105,13 +111,25 @@
         autocmd BufWinEnter * call ResCur()
     augroup END
  
+" experimental
+"   set statusline=%m         " Modified
+"   set statusline+=%r        " Read only
+"   set statusline+=%F        " Path to the file
+"   set statusline+=%=        " Switch to the right side
+"   set statusline+=%l        " Current line
+"   set statusline+=/         " Separator
+"   set statusline+=%L        " Total lines
+"
+"   set noruler
+"   set statusline=%F[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+ 
 " Cheat sheet
 "
 "    START VIM
-"    vim <file1> <file2>             Open files in buffers, show first
-"    vim -o <file1> <file2>          In horisontal split
-"    vim -O <file1> <file2>          In vertical split
-"    vim -p <file1> <file2>          In tabs
+"    vim <file1> <file2>               Open files in buffers, show first
+"    vim -o <file1> <file2>            In horisontal split
+"    vim -O <file1> <file2>            In vertical split
+"    vim -p <file1> <file2>            In tabs
 "  
 "    INFO
 "    Ctrl-g                          See file and position
@@ -175,7 +193,8 @@
 "    a                               Insert after marker
 "    o                               Insert after line
 "    O                               Insert before line
-"    R                               Overwrite
+"    I                               Insert, beginning of line
+"    A                               Insert, end of line
 "    u                               Undo
 "    Ctrl-r                          Redo
 "    p                               Paste after marker
@@ -185,6 +204,8 @@
 "    dd                              Delete line
 "    dw                              Delete word
 "    d$                              Delete to end of line
+"    D                               Delete to end of line
+"    C                               Change to end of line
 "    dG                              Delete to en of file
 "    x                               Delete character
 "    J                               Join two lines
