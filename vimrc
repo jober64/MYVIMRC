@@ -19,6 +19,8 @@
         colorscheme solarized
         set guifont=Consolas:h10:cDEFAULT
         set lines=50 columns=120
+        set langmenu=en_US.UTF-8
+        let $LANG = 'en_US'
     elseif has ("gui_macvim")
         "Mac macvim
         let g:solarized_termcolors=256
