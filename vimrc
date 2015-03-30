@@ -132,6 +132,8 @@
 "    vim -o <file1> <file2>            In horisontal split
 "    vim -O <file1> <file2>            In vertical split
 "    vim -p <file1> <file2>            In tabs
+"    vim -r                            Recovery status
+"    vim -r <file1>                    Recover file1
 "  
 "    INFO
 "    Ctrl-g                          See file and position
