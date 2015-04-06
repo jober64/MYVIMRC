@@ -5,7 +5,14 @@
 "    * JB 2011-2015 *                                         "
 "                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
- 
+
+"   Basic settings
+    set nocompatible
+    filetype off
+
+"   Plugins
+    silent! source .plugin.vim
+
 "   User interface
     if has ("gui_win32")
         "Windows gvim
@@ -37,14 +44,11 @@
 
 " General settings
     syntax on
-    set nocompatible
-    set title
-    "The backspace setting need to changed depending on
-    "which terminal you are using.
+    filetype plugin indent on
     set backspace=2
     set ignorecase
     set smartcase
-    set nonumber
+    set number
     set nostartofline
     set hlsearch
     set incsearch
@@ -60,7 +64,6 @@
     set shiftwidth=4
     set softtabstop=4
     set expandtab
-    set number
     set nowrap
     set wildmenu
     set wildmode=full
@@ -95,7 +98,12 @@
  
 " Toggle Cheat Sheet
     function! ToggleCheatSheet()
-        let MyCheatSheet = ".vim/doc/help.markdown"
+        if has ("gui_win32")
+            let MyCheatSheet = $VINRUNTIME . "/vimfiles/doc/help.txt"
+        else
+            let MyCheatSheet = $HOME . "/.vim/doc/help.txt"
+        endif
+
         if bufloaded(MyCheatSheet)
             execute "bdelete " . MyCheatSheet
         else
@@ -108,8 +116,8 @@
 " Open files from last session and remember last positions
     if has ("gui_win32")
         "Special path for gvim in NOW/Windows
-        set viminfo='10,\"100,:20,%,n$VINRUNTIME/Vim/_viminfo
-    else
+        set viminfo='10,\"100,:20,%,n$VIMRUNTIME/Vim/_viminfo
+   else
         "Standard
         set viminfo='10,\"100,:20,%,n~/.viminfo
     endif
@@ -126,3 +134,9 @@
         autocmd BufWinEnter * call ResCur()
     augroup END
  
+" Reload .vimrc when saved
+    augroup reload_vimrc " {
+        autocmd!
+        autocmd BufWritePost $MYVIMRC source $MYVIMRC
+    augroup END " } 
+
