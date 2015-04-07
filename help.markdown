@@ -47,8 +47,8 @@
     :ls                         List buffers
     :enew                       New empty buffer in current window
     :new                        New empty buffer in horisontal window
-    :botright new                   New empty buffer in bottom horisontal window
-    :botright vnew                  New empty buffer in right vertical window
+    :botright new               New empty buffer in bottom horisontal window
+    :botright vnew              New empty buffer in right vertical window
     :vnew                       New empty buffer in vertical window
     :badd <fil>                 New named buffer
     :bn                         Next buffer
@@ -57,26 +57,26 @@
     :ball                       Show all buffers in windows
     :bd                         Close saved buffer
     :bd!                        Close buffer, do not save
-    <Tab>                        Go to buffer (Remapped)
+    <Tab>                       Go to buffer (Remapped)
  
 ## WINDOWS
 
-    Ctrl-w s                        Horisontal split
-    Ctrl-w v                        Vertical split
-    Ctrl-w w                        Jump between windows
-    Ctrl-w <arrows>                 Navigate between windows
-    Ctrl-w c                        Close window
-    Ctrl-w q                        Close window including last
-    :q                              Same
-    :q!                             Same, do not save
-    Ctrl-w r                        Rotate windows
-    Ctrl-w +                        Increase horisontal window
-    Ctrl-w -                        Decrease horisontal window
-    Ctrl-w =                        Equal window size
-    Ctrl-w _                        Maximize horisontal window
-    Ctrl-w |                        Maximize vertical window
-    :split <file>                   Open file in horisontal window
-    :vsplit <file>                  Open file in vertical window
+    Ctrl-w s                    Horisontal split
+    Ctrl-w v                    Vertical split
+    Ctrl-w w                    Jump between windows
+    Ctrl-w <arrows>             Navigate between windows
+    Ctrl-w c                    Close window
+    Ctrl-w q                    Close window including last
+    :q                          Same
+    :q!                         Same, do not save
+    Ctrl-w r                    Rotate windows
+    Ctrl-w +                    Increase horisontal window
+    Ctrl-w -                    Decrease horisontal window
+    Ctrl-w =                    Equal window size
+    Ctrl-w _                    Maximize horisontal window
+    Ctrl-w |                    Maximize vertical window
+    :split <file>               Open file in horisontal window
+    :vsplit <file>              Open file in vertical window
  
 ## EDITING
 
