@@ -11,7 +11,7 @@
     filetype off
 
 "   Plugins
-    silent! source .plugin.vim
+    silent! source ~/.plugin.vim
 
 "   User interface
     if has ("gui_win32")
@@ -53,7 +53,6 @@
     set hlsearch
     set incsearch
     set laststatus=2
-    set ruler
     set hidden
     set encoding=utf-8
     set shortmess+=I
@@ -74,6 +73,8 @@
     set nobackup
     "set backupdir=~/.vim/backup//
     "set directory=~/.vim/swap//
+    "set ruler
+    set statusline=%t%m[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%r%y%=%c:%l/%L\ %P
 
 " Shortcuts
 " Optimized for Swedish keyboards
@@ -99,7 +100,7 @@
 " Toggle Cheat Sheet
     function! ToggleCheatSheet()
         if has ("gui_win32")
-            let MyCheatSheet = $VINRUNTIME . "/vimfiles/doc/help.txt"
+            let MyCheatSheet = $VIM . "/vimfiles/doc/help.txt"
         else
             let MyCheatSheet = $HOME . "/.vim/doc/help.txt"
         endif
@@ -116,7 +117,7 @@
 " Open files from last session and remember last positions
     if has ("gui_win32")
         "Special path for gvim in NOW/Windows
-        set viminfo='10,\"100,:20,%,n$VIMRUNTIME/Vim/_viminfo
+        set viminfo='10,\"100,:20,%,n$VIM/_viminfo
    else
         "Standard
         set viminfo='10,\"100,:20,%,n~/.viminfo
