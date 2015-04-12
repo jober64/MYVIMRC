@@ -16,12 +16,9 @@
 
 "   User interface
     if has ("gui_win32")
-        "Windows gvim
-        let g:solarized_termcolors=256
         set background=dark
-        let g:solarized_menu=0
-        colorscheme solarized
-        set guifont=Consolas:h10:cDEFAULT
+        colorscheme base16-tomorrow
+        set guifont=Consolas:h11:cDEFAULT
         set lines=50 columns=120
         set langmenu=en_US.UTF-8
         let $LANG = 'en_US'
