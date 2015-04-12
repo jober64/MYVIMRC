@@ -9,6 +9,7 @@
 "   Basic settings
     set nocompatible
     filetype off
+    syntax on
 
 "   Plugins
     silent! source ~/.plugin.vim
@@ -26,24 +27,17 @@
         let $LANG = 'en_US'
     elseif has ("gui_macvim")
         "Mac macvim
-        let g:solarized_termcolors=256
-        set background=light
-        let g:solarized_menu=0
-        colorscheme solarized
+        set background=dark
+        colorscheme base16-tomorrow
         set guifont=Menlo\ Regular:h14
     else
         "vim
-        "Use 'ron' for black background
-        "colorscheme ron 
-
-        "Use Solarized color scheme when available
-        set t_Co=256
-        set background=light
-        colorscheme solarized
+        colorscheme ron
+        "hi StatusLine ctermbg=white ctermfg=darkred
+        hi StatusLine ctermbg=white ctermfg=darkgrey
     endif
 
 " General settings
-    syntax on
     filetype plugin indent on
     set backspace=2
     set ignorecase
