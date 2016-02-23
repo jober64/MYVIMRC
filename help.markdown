@@ -3,18 +3,18 @@
 ## START VIM
 
     vim <file1> <file2>         Open files in buffers, show first
-    vim -o <file1> <file2>      In horisontal split
+    vim -o <file1> <file2>      In horizontal split
     vim -O <file1> <file2>      In vertical split
     vim -p <file1> <file2>      In tabs
     vim -r                      Recovery status
-    vim -r <file1>              Recover <file1>
- 
+    vim -r <file>               Recover <file>
+
 ## INFO
 
     Ctrl-g                      See file and position
     Ctrl-l                      Redraw (Remapped to turn off highlights)
     q:                          Command line window
-     
+
 ## NAVIGATION
 
     Arrows,h,j,k,l              Left, down, up, right
@@ -36,7 +36,7 @@
     gg                          First line of buffer
     G                           Last line of buffer
     <number>gg                  Go to line <number>
- 
+
 ## BUFFERS
 
     :e <fil>                    Open file
@@ -58,7 +58,7 @@
     :bd                         Close saved buffer
     :bd!                        Close buffer, do not save
     <Tab>                       Go to buffer (Remapped)
- 
+
 ## WINDOWS
 
     Ctrl-w s                    Horisontal split
@@ -77,7 +77,7 @@
     Ctrl-w |                    Maximize vertical window
     :split <file>               Open file in horisontal window
     :vsplit <file>              Open file in vertical window
- 
+
 ## EDITING
 
     i                           Insert before marker
@@ -103,7 +103,7 @@
     Ctrl-r 0                    Paste yank register in insert/command mode
     "0p                         Paste yank register after marker
     <F2>                        Pastemode (Remapped)
-    
+
 ## VISUAL EDITING
 
     v                           Visual selection
@@ -112,7 +112,7 @@
     d                           Delete text in selection
     y                           Yank/copy text in selection
     gv                          Previous selection
-    
+
 ## SEARCH AND REPLACE
 
     *                           Search forwards using current word
@@ -130,7 +130,7 @@
     vimgrep /<foo>/gj *         Search for <foo> in files, result in quick fix list
     vimgrep /<foo>/gj **/*      Search recursively for <foo> in files
     :cw                         Show quick fix list
- 
+
 ## TABS
 
     :tabnew                     New tab
@@ -158,4 +158,4 @@
     + and *                     System clipboard registers
     %                           Current buffer register
     #                           Previous buffer register
-    :registers                  See register contents 
+    :registers                  See register contents
