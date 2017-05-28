@@ -67,6 +67,7 @@
     "set directory=~/.vim/swap//
     "set ruler
     set statusline=%t%m[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%r%y%=%c:%l/%L\ %P
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Shortcuts
 " Optimized for Swedish keyboards
